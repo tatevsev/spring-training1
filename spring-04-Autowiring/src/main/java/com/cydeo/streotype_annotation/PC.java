@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PC {
 
+
     private Case theCase;
     private Monitor monitor;
     private Motherboard motherboard;
