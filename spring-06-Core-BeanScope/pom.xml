@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.cydeo</groupId>
-    <artifactId>spring-05-Core-Abstraction</artifactId>
+    <artifactId>spring-06-Core-BeanScope</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
