@@ -4,6 +4,7 @@ import com.cydeo.bootstrap.DataGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 
@@ -18,8 +19,9 @@ public class StudentController {
     }
 
 
-    @RequestMapping("/welcome/") //loalhost:8080/student/register
-    public String welcome(){
+    @RequestMapping("/welcome") //loalhost:8080/student/register/welcome?name=Ozzy
+    public String welcome(@RequestParam String name){
+        System.out.println(name);
         return "student/welcome";
     }
 }
