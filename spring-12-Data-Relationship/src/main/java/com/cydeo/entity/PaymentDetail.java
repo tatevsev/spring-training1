@@ -27,6 +27,9 @@ public class PaymentDetail {
     @Column(columnDefinition = "DATE")
     private LocalDate paymentDate;
 
+    @OneToOne(mappedBy = "paymentDetail") //will drop payment_id in paymentDetail, don't create foreign key  payment_id inside paymentDetail,payment table will have ownership over this relationships
+    private Payment payment;
+
     public PaymentDetail(BigDecimal merchantPayoutAmount, BigDecimal commissionAmount, LocalDate paymentDate) {
         this.merchantPayoutAmount = merchantPayoutAmount;
         this.commissionAmount = commissionAmount;
