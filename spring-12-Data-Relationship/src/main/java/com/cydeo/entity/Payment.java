@@ -36,6 +36,8 @@ public class Payment {
     private PaymentDetail paymentDetail;
     //we don't add paymentDetail to constructor because that info needs to come from joints table, we don't provide that info by ourselves
 
+    @ManyToOne //many payments one merchant
+    private Merchant merchant;
 
     public Payment(Status paymentStatus, LocalDate createdDte, BigDecimal amount) {
         this.paymentStatus = paymentStatus;
