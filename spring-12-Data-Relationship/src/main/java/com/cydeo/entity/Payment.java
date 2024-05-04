@@ -19,9 +19,12 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(columnDefinition ="DATE")
     private LocalDate createdDte;
+
     private BigDecimal amount;
+
     @Enumerated(EnumType.STRING)
     private Status status;
 
