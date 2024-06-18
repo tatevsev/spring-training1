@@ -21,6 +21,8 @@
         <option value="$PROJECT_DIR$/spring-12-Data-Relationships/pom.xml" />
         <option value="$PROJECT_DIR$/spring-12-Data-Relationship/pom.xml" />
         <option value="$PROJECT_DIR$/spring-14-Data-Queries/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-15-REST/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-review-IoC/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

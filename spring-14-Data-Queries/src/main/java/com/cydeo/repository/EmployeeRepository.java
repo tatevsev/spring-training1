@@ -4,6 +4,7 @@ import com.cydeo.entity.Employee;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -63,15 +64,16 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> retrieveEmployeeFirstNameLike(String pattern);
 
     //Show Employee, with salary LESS THAN
-    @Query("SELECT E FROM Employee  E WHERE e.salary < ?1")
+    @Query("SELECT e FROM Employee  e WHERE e.salary < ?1")
 
-    List <Employee> retrieveEmployeeSalaryLessThan(Integer salary);//LESS THAN
+    List <Employee> retrieveEmployeeSalaryLessThan(int salary);//LESS THAN
 
 
 
     //Show EMPLOYEEs NAMEs, Greater than
-    @Query("SELECT E.firstName FROM Employee  E WHERE e.salary > ?1")
+    @Query("SELECT e.firstName FROM Employee  e WHERE e.salary > ?1")
     List<String> retrieveEmployeeSalaryMoreThan(Integer salary);
+
 
     //Between 50000 and 60000
     @Query("SELECT e FROM Employee e where e.salary BETWEEN ?1 AND ?2")
@@ -80,6 +82,29 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     //Before
     @Query("SELECT E FROM Employee E where E.hireDate > ?1 ")
     List<Employee> retrieveEmployeeHiredDateBefore(LocalDate date);
+
+    //NULL
+    @Query("SELECT e FROM Employee  e where e.email IS NULL ")
+    List<Employee> retrieveEmployeeEmailIsNull();
+
+    //is not NULL
+    @Query("SELECT e FROM Employee  e where e.email  IS NOT NULL ")
+    List<Employee> retrieveEmployeeEmailIsNotNull();
+
+
+    //Sorting in ASC order
+    @Query("SELECT e from Employee e ORDER BY e.salary asc ")
+    List<Employee> retrieiveEmployeeSalaryOrderAsc();
+
+    //Native Query
+    @Query(value = "SELECT * FROM employees  WHERE salary=?1",nativeQuery = true)
+    List<Employee> retrieveEmployeeDetailBySalary(int salary);
+
+
+    //Named Parameter
+    @Query("SELECT e FROM Employee e WHERE e.salary = :salary")
+    List<Employee> retrieveEmployeeSalary(@Param("salary") int salary);
+
 
 
 
