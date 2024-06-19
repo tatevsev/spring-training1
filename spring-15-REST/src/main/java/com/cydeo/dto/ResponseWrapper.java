@@ -1,10 +1,15 @@
 package com.cydeo.dto;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpServerErrorException;
 
 import javax.persistence.criteria.CriteriaBuilder;
-
+@Getter
+@Setter
+@NoArgsConstructor
 public class ResponseWrapper {
 
     private boolean success;
