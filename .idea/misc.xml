@@ -24,6 +24,7 @@
         <option value="$PROJECT_DIR$/spring-15-REST/pom.xml" />
         <option value="$PROJECT_DIR$/spring-review-IoC/pom.xml" />
         <option value="$PROJECT_DIR$/spring-17-REST-ConsumingApis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-19-REST-OpenAPI3/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
