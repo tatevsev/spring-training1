@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @EnableFeignClients
-public class Spring17RestConsumingApisApplication {
+public class   Spring17RestConsumingApisApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Spring17RestConsumingApisApplication.class, args);
