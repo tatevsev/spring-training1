@@ -29,10 +29,11 @@ class CalculatorTest {
 
 
     @Test
+    @DisplayName("MyMethod")
     void add() {
         System.out.println("Add method");
         int actual = Calculator.add(2,3);
-        assertEquals(4,actual,"Test failed");
+        assertEquals(5,actual,"Test failed");
     }
 
 
